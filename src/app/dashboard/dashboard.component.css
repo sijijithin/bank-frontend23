@@ -1,0 +1,17 @@
+header{
+    padding: 5px;
+    background-image: linear-gradient(blue,white,black);
+    height: 100px;
+}
+.services{
+    text-align: center;
+    color: rgb(19, 19, 151);
+
+}
+.card-title{
+margin-top: 80%;
+color: red;
+}
+.second{
+    background-color: white;
+}

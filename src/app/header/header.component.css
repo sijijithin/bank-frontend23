@@ -1,0 +1,15 @@
+header{
+    width: 100%;
+    height: 250px;
+    background-image:url("https://d1zx6djv3kb1v7.cloudfront.net/wp-content/media/2020/01/What-are-the-trends-in-banking-sector-i2tutorials.png") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+a{
+    color: black;
+    font-weight: 700;
+}
+

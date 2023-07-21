@@ -1,0 +1,51 @@
+<app-header></app-header>
+<!-- login design -->
+<div class="container mt-5">
+  <h1> Welcome to<span class="text-danger"> Sign Up page</span> of <span class="text-warning"> Dhan_Sambath bank</span>
+  </h1>
+  <p style="text-align: justify;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse veniam cumque reprehenderit quos corrupti corporis
+    nihil praesentium cum maxime ex fugiat nisi expedita obcaecati ad illo, temporibus perspiciatis earum omnis.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolorum quaerat molestias dicta placeat, fugiat
+    praesentium vitae sequi. Totam perspiciatis aperiam recusandae animi ad deleniti iste eum fugiat illo quae.
+  </p>
+
+  <div class="row mt-5">
+
+    <div class="col-lg-6 border p-3 login">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <!-- validate acno  -->
+        <div class="mb-3 text-danger" *ngIf="this.loginForm.get('acno')?.touched && this.loginForm.get('acno')?.errors">
+          *Invalid Accoutn Number
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputaccountnum" class="form-label">Account Number</label>
+          <input name="acno" formControlName="acno" type="number" class="form-control" id="exampleInputaccountnum">
+        </div>
+        <!--  validating password -->
+        <div class="mb-3 text-danger" *ngIf="this.loginForm.get('pswd')?.touched && this.loginForm.get('pswd')?.errors">
+          *Invalid Password
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input name="pswd" formControlName="pswd" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-primary me-3">Login
+          <!-- spinner -->
+          <div *ngIf="isLoggedin" class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </button> New users Please <a class="ms-3"
+          routerLink="user/register">Register </a>
+      </form>
+    </div>
+
+    <div class="col-lg-1"></div>
+
+    <div class="col-lg-5 ">
+      <img class="img-fluid" src="https://i.pinimg.com/originals/cd/cf/1d/cdcf1d634cd7dcb1b9f5fc7ce321a9ed.gif" alt="">
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

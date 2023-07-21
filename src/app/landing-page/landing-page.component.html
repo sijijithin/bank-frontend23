@@ -1,0 +1,38 @@
+<!-- header -->
+<app-header></app-header>
+<!--main content -->
+<div class="container m-5">
+    <div class="row">
+        <div class="col-lg-4 mt-5">
+            <img class="img-fluid "
+                src="https://th.bing.com/th/id/R.97e253cd8e9942b4ac69a54058d20203?rik=8UOeVt%2fzWcseTg&riu=http%3a%2f%2fi2.cdn.turner.com%2fmoney%2fdam%2fassets%2f151215155729-fed-rate-hike-interest-gif-2-custom-2.gif&ehk=S2yIYd47Sb23V8ms%2bcgQmAe%2fqAL5YbDyYXEQLA0ucXI%3d&risl=&pid=ImgRaw&r=0 "
+                alt="">
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6">
+            <h2>Welcome  <span class="text-warning">{{user}}...</span></h2>
+            <p style="text-align: justify;">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quidem, optio voluptatum expedita
+                minima maxime! Cupiditate eos mollitia adipisci minus nisi eum error nulla voluptate labore dignissimos,
+                similique nostrum aliquid? Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illo in earum
+                vero eaque minima eos cum vitae quam facere nulla, quae, repudiandae ab sapiente, qui id veritatis
+                consequatur a.
+            </p>
+            <div class="collapse" id="collapseExample">
+                <p style="text-align: justify;">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quidem, optio voluptatum expedita
+                    minima maxime! Cupiditate eos mollitia adipisci minus nisi eum error nulla voluptate labore dignissimos,
+                    similique nostrum aliquid? Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illo in earum
+                    vero eaque minima eos cum vitae quam facere nulla, quae, repudiandae ab sapiente, qui id veritatis
+                    consequatur a.
+                </p>
+            </div>
+            <button (click)="toggle()" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+               Read <span *ngIf="isReadMore"> More</span><span *ngIf="!isReadMore">Less</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<app-footer></app-footer>

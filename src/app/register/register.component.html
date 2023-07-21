@@ -1,0 +1,59 @@
+<app-header></app-header>
+<!-- register design -->
+<div class="container mt-5">
+
+
+  <div class="row mt-5">
+    <div class="col-lg-4 mt-5 p-3 ">
+      <img class="img-fluid" src="https://media.giphy.com/media/LMKM0TxkX9E8xPgccL/giphy.gif" alt="">
+      <h4 class="tex-center p-3 mt-5"> Register and be a family</h4>
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-6  p-3 ">
+      <h1> Welcome to <span class="text-danger"> Registeration page of</span><span class="text-warning"> Dhan_Sambath
+          bank</span></h1>
+      <p style="text-align: justify;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse veniam cumque reprehenderit quos corrupti corporis
+        nihil praesentium cum maxime ex fugiat nisi expedita obcaecati ad illo, temporibus perspiciatis earum omnis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolorum quaerat molestias dicta placeat, fugiat
+        praesentium vitae sequi. Totam perspiciatis aperiam recusandae animi ad deleniti iste eum fugiat illo quae.
+      </p>
+
+      <form [formGroup]="registerForm" class=" border login p-4 mt-3" (ngSubmit)="register()">
+
+         <!-- username validation -->
+         <div class="mb-3 text-danger"
+         *ngIf="this.registerForm.get('username')?.touched && this.registerForm.get('username')?.errors">
+         *invalid Username
+       </div>
+       <div class="mb-3">
+         <label for="exampleInputusername" class="form-label">Username</label>
+         <input name="username" formControlName="username" type="text" class="form-control" id="exampleInputusername">
+       </div>
+        <!-- accountnumber validation -->
+        <div class="mb-3 text-danger"
+          *ngIf="this.registerForm.get('acno')?.touched && this.registerForm.get('acno')?.errors">
+          *Invalid Account Number
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputaccountnum" class="form-label">Account Number</label>
+          <input name="acno" formControlName="acno" type="number" class="form-control" id="exampleInputaccnum">
+        </div>
+       
+  <!-- password validation -->
+        <div class="mb-3 text-danger"
+          *ngIf="this.registerForm.get('pswd')?.touched && this.registerForm.get('pswd')?.errors">
+          *Invalid Password
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input name="pswd" formControlName="pswd" type="password" class="form-control" id="exampleInputPswd1">
+        </div>
+
+        <button type="submit" class="btn btn-primary me-3">Register</button> New users Please <a class="ms-3"
+        routerLink="/user/login">Login </a>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

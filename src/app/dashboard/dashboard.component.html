@@ -1,0 +1,170 @@
+<header>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand " routerLink=""> <i class="fa-solid fa-building-columns fa-beat"></i>
+                Dhan_Sambath Bank</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Settings
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a data-bs-toggle="modal" data-bs-target="#staticdelete"  class="dropdown-item" href="staticdelete"><i class="fa-sharp fa-solid fa-trash"></i>Delet my
+                                    Account</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a (click)="logout()" class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i>Log
+                                    Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="containerr">
+    <div class="row mt-5 ms-2">
+        <div class="col-lg-5">
+            <h2>Welcome <span class="text-success">User...</span></h2>
+            <div style="text-align: justify;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus explicabo earum aut quam quos
+                perferendis
+                laborum, libero quis laboriosam itaque numquam saepe quia optio. Officia ullam quaerat aspernatur
+                aliquid
+                autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cumque veniam corporis enim
+                ratione
+                voluptatum voluptate quo aspernatur eveniet perferendis possimus, asperiores, et, laboriosam accusamus.
+                Deleniti, omnis! Aspernatur, enim commodi?
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
+            <img src="https://th.bing.com/th/id/OIP.eBrY0MWgw5CHLD6wPr03GAHaFg?pid=ImgDet&rs=1" alt="">
+        </div>
+
+    </div>
+    <div class="row">
+        <h2 class="services m-5"> --** Our Services **--</h2>
+        <div class="col-lg-4">
+            <div (click)="getbalance()" class="card text-bg-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" >
+                <img src="https://th.bing.com/th/id/R.3058b8dfebdb792c69c65c06a44b3c18?rik=BvUpORbzaUj%2bLg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-CBDZrsfocZk%2fUYCGLNKDKaI%2fAAAAAAAAYNo%2feohlzSFqxpM%2fs1600%2fquestion%2bmark%2bblue.jpg&ehk=Ggkl0xn93W%2fpF77aEBfJs5dT39DWsIIQO2oS0sKkcF8%3d&risl=&pid=ImgRaw&r=0"
+                    class="card-img " alt="...">
+                <div class="card-img-overlay">
+                    <h1 class="card-title text-center">ENQUIRY</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 second"   >
+            <div class="card text-bg-dark " data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="width: 450px; height:490px;">
+                <img src="https://th.bing.com/th/id/OIP.UR3FV8sppVzNW6RN4PfwBAAAAA?w=170&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+                    class="card-img p-5" alt="...">
+                <div class="card-img-overlay">
+                    <h4 class="card-title ">Bank Transfer</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card text-bg-dark">
+                <img src="https://th.bing.com/th/id/OIP.K46fdrQzVdmiRfjjsCZovQHaH_?w=182&h=198&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+                    class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <a routerLink="/user/transactions">
+                        <h4 class="card-title ">Mini Statement </h4>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- balance offcanvas boopstrap -->
+<div *ngIf="balancesuccessstatus" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header text-danger">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Balance Enquiry</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <img src="https://th.bing.com/th/id/OIP.hmv5nRep_K7s7ZM8eWngdAAAAA?w=188&h=188&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="">
+        <div class="text-success">
+            Hai {{user}}<p>Your Current Balance is <span class="text-warning fw-bolder ">{{balance}}</span> </p>
+        </div>
+    </div>
+</div>
+
+
+<!-- balance of static backdrop // fund transfer -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel">Funds Transfer Form </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body ">
+        <img class="img-fluid" src="https://i1.wp.com/innovation-village.com/wp-content/uploads/2018/03/Funds-Transfer.jpg?resize=700%2C375&ssl=1" alt="">
+        </div>
+        <!-- credit acno -->
+        <form [formGroup]="transferForm" class="mt-2 p-3">
+            <div class="form-floating">
+                <input nmae="creditacno" formControlName="creditacno" type="text" class="form-control" id="floatingPassword" placeholder="Credit Account Number">
+                <label for="floatingPassword">Credit Account Number</label>
+              </div>
+                <!-- validate credit  acno  -->
+        <div class="mb-3 text-danger" *ngIf="this.transferForm.get('creditacno')?.touched && this.transferForm.get('amount')?.errors">
+            *Invalid Credit Accoutn Number
+          </div>
+              <div class="form-floating">
+                <input name="amount" formControlName="amount" type="text" class="form-control" id="floatingPassword" placeholder="Amount">
+                <label for="floatingPassword">Amount</label>
+              </div>
+                 <!-- validate amount  -->
+        <div class="mb-3 text-danger" *ngIf="this.transferForm.get('amount')?.touched && this.transferForm.get('amount')?.errors">
+            *Invalid amount
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="transfer()">Transfer</button>
+          <button type="button" class="btn btn-secondary" >cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal -->
+<div class="modal fade" id="staticdelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Account Delete Confirmation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you Sure , Do You Want to Delete this acoount </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success"  data-bs-dismiss="modal">No</button>
+          <button (click)="deleteAccount()" type="button" class="btn btn-danger"  data-bs-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div> 
